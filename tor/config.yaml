@@ -2,7 +2,7 @@
 name: Tor PR 328 Test
 version: dev
 slug: tor_pr328
-description: Isolated runtime test for Tor PR #328
+description: "Isolated runtime test for Tor PR #328"
 url: https://github.com/eXPerience83/app-tor
 startup: services
 arch:
