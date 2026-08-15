@@ -1,17 +1,17 @@
 ---
-name: Tor
+name: Tor PR 328 Test
 version: dev
-slug: tor
-description: Protect your privacy and access Home Assistant via Tor
-url: https://github.com/hassio-addons/app-tor
+slug: tor_pr328
+description: Isolated runtime test for Tor PR #328
+url: https://github.com/eXPerience83/app-tor
 startup: services
 arch:
   - aarch64
   - amd64
 init: false
 ports:
-  9050/tcp: 9050
-  9080/tcp: 9080
+  9050/tcp: 19050
+  9080/tcp: 19080
 ports_description:
   9050/tcp: Tor SOCKS proxy port
   9080/tcp: Tor HTTP proxy port
