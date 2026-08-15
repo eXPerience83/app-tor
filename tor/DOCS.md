@@ -51,7 +51,7 @@ client_names:
   - haremote1
   - haremote2
 ports:
-  - 8123
+  - auto
 bridges: []
 ```
 
@@ -148,8 +148,22 @@ ports:
   - 22
 ```
 
+For normal Home Assistant access, `auto` can be used instead of configuring
+its HTTP port manually:
+
+```yaml
+ports:
+  - "auto"
+```
+
+At startup, `auto` gets the active Home Assistant Core port from Supervisor.
+It publishes Home Assistant on Onion port `80` and, when the detected Core port
+is not `80`, also publishes that same port number. Manual mappings can still be
+used alongside `auto`.
+
 The accepted syntax of this configuration is:
 
+- automatic Home Assistant mapping `"auto"`
 - hostname:local_port:published_port `"homeassistant:8123:8080"`
 - local_ip:local_port:published_port `"192.168.1.60:8123:8080"`
 - hostname:local_port `"homeassistant:8123"`
