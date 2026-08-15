@@ -16,7 +16,7 @@ declare target_port
 declare virtual_port
 
 readonly torrc='/etc/tor/torrc'
-readonly hidden_service_dir='/ssl/tor/hidden_service'
+readonly hidden_service_dir='/ssl/tor-pr328/hidden_service'
 readonly authorized_clients_dir="${hidden_service_dir}/authorized_clients"
 readonly clients_dir="${hidden_service_dir}/clients"
 readonly hostname_file="${hidden_service_dir}/hostname"
@@ -57,7 +57,7 @@ mkdir -p \
     "${clients_dir}" \
     "${hidden_service_dir}" \
     || bashio::exit.nok 'Could not create tor data directories'
-chmod -R 0700 /ssl/tor
+chmod -R 0700 /ssl/tor-pr328
 
 # Persist Tor state across restarts to speed up bootstrapping
 # Tor requires the DataDirectory to have mode 0700
